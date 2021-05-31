@@ -19,10 +19,10 @@ let Basic = ({ localizer }) => (
     step={60}
     showMultiDayTimes
     max={dates.add(dates.endOf(new Date(2015, 17, 1), 'day'), -1, 'hours')}
-    defaultDate={new Date(2015, 3, 1)}
-    components={{
-      timeSlotWrapper: ColoredDateCellWrapper,
-    }}
+    // defaultDate={new Date(2015, 3, 1)}
+    // components={{
+    //   timeSlotWrapper: ColoredDateCellWrapper,
+    // }}
     localizer={localizer}
   />
 )
