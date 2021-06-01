@@ -2,6 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import clsx from 'clsx'
 import { navigate } from './utils/constants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons'
 
 import './sass/styles.scss'
 
@@ -14,7 +19,7 @@ class Toolbar extends React.Component {
 
     return (
       <div className="rbc-toolbar">
-        <div className="rbc-btn-group">
+        <div id="date-nav" className="rbc-btn-group">
           <button
             className="btn secondary"
             type="button"
@@ -23,16 +28,18 @@ class Toolbar extends React.Component {
             {messages.today}
           </button>
           <button
+            className="rounded"
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
-            <i class="fas fa-chevron-left" />
+            <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <button
+            className="rounded"
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
           >
-            {messages.next}
+            <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
 
