@@ -4,14 +4,27 @@
   border: none;
   box-sizing: border-box;
   box-shadow: none;
-  margin: 0;
+  // margin: 0;
   padding: $event-padding;
   background-color: $event-bg;
   border-radius: $event-border-radius;
-  color: $event-color;
+  // color: $event-color;
   cursor: pointer;
   width: 100%;
   text-align: left;
+
+  // custom styles
+  font-family: Quasimoda;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #fefefe;
+  padding: 8px 8px 39px;
+  border-radius: 3px;
+  border: solid 1px #ffffff;
 
   .rbc-slot-selecting & {
     cursor: inherit;

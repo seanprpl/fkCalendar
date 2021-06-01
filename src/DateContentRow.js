@@ -7,10 +7,6 @@ import { findDOMNode } from 'react-dom'
 
 import * as dates from './utils/dates'
 import BackgroundCells from './BackgroundCells'
-import EventRow from './EventRow'
-import EventEndingRow from './EventEndingRow'
-import NoopWrapper from './NoopWrapper'
-import ScrollableWeekWrapper from './ScrollableWeekWrapper'
 import * as DateSlotMetrics from './utils/DateSlotMetrics'
 
 class DateContentRow extends React.Component {
@@ -105,52 +101,21 @@ class DateContentRow extends React.Component {
       rtl,
       range,
       className,
-      selected,
       selectable,
       renderForMeasure,
-
-      accessors,
       getters,
       components,
 
       getNow,
       renderHeader,
-      onSelect,
-      localizer,
       onSelectStart,
       onSelectEnd,
-      onDoubleClick,
-      onKeyPress,
       resourceId,
       longPressThreshold,
-      isAllDay,
-      resizable,
       showAllEvents,
     } = this.props
 
     if (renderForMeasure) return this.renderDummy()
-
-    let metrics = this.slotMetrics(this.props)
-    let { levels, extra } = metrics
-
-    let ScrollableWeekComponent = showAllEvents
-      ? ScrollableWeekWrapper
-      : NoopWrapper
-    let WeekWrapper = components.weekWrapper
-
-    const eventRowProps = {
-      selected,
-      accessors,
-      getters,
-      localizer,
-      components,
-      onSelect,
-      onDoubleClick,
-      onKeyPress,
-      resourceId,
-      slotMetrics: metrics,
-      resizable,
-    }
 
     return (
       <div className={className} role="rowgroup">
@@ -182,20 +147,6 @@ class DateContentRow extends React.Component {
               {range.map(this.renderHeadingCell)}
             </div>
           )}
-          <ScrollableWeekComponent>
-            <WeekWrapper isAllDay={isAllDay} {...eventRowProps}>
-              {levels.map((segs, idx) => (
-                <EventRow key={idx} segments={segs} {...eventRowProps} />
-              ))}
-              {!!extra.length && (
-                <EventEndingRow
-                  segments={extra}
-                  onShowMore={this.handleShowMore}
-                  {...eventRowProps}
-                />
-              )}
-            </WeekWrapper>
-          </ScrollableWeekComponent>
         </div>
       </div>
     )
