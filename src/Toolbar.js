@@ -3,6 +3,8 @@ import React from 'react'
 import clsx from 'clsx'
 import { navigate } from './utils/constants'
 
+import './sass/styles.scss'
+
 class Toolbar extends React.Component {
   render() {
     let {
@@ -14,6 +16,7 @@ class Toolbar extends React.Component {
       <div className="rbc-toolbar">
         <span className="rbc-btn-group">
           <button
+            className="btn secondary"
             type="button"
             onClick={this.navigate.bind(null, navigate.TODAY)}
           >

@@ -5,6 +5,103 @@
 @import url(//db.onlinewebfonts.com/c/55c61a4d485311e18a91bb5b5f0993f2?family=Quasimoda);
 
 
+:root {
+  --color-primary: #4040d1;
+  --color-white: #fefefe;
+  --color-white-2: #fff6f6;
+  --color-white-3: #f8f8f8;
+  --color-blue-light: #ddddff;
+  --color-blue-highlight: #f3f3fe;
+  --color-blue-med: #6969ff;
+  --color-blue-dark: #191952;
+  --color-deep-blue: #0d1b2a;
+  --color-light-blue: #deebff;
+  --color-red: #ff5349;
+  --color-red-light: #fecac7;
+  --color-error-red: #e0b4b4;
+  --color-alert-red: #fe9791;
+  --color-alert-background: #fff6f6;
+  --color-tan: #ffdab9;
+  --color-gray-0: #f7f9f9;
+  --color-gray-1: #b4c3cc;
+  --color-gray-2: #6b747a;
+  --color-gray-3: #43494d;
+  --color-gray-4: #2d3133;
+  --color-yellow: #ffe74c;
+  --color-yellow-light: #fef6c8;
+  --color-green: #35c165;
+  --color-light-green: #70f79e;
+  --color-green-highlight: #d3fbe1;
+  --color-body: #f7f9f9;
+  --color-body-mobile: #ffff;
+  --color-nav-highlight: rgba(0, 0, 0, 0.1);
+  --color-transparent: rgba(0, 0, 0, 0);
+
+  --font-family-quasimoda: quasimoda, sans-serif;
+  --font-family-opensans: open-sans, sans-serif;
+
+  --font-size-headline: 64px;
+
+  --ease-inOut-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  --box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+
+  --border: 1px solid #b4c3cc;
+
+  --max-width: 1040px;
+}
+
+
+@mixin breakpoint($point, $value: 0) {
+  @if $point==mobile {
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $point==mobile-hybrid {
+    @media (min-width: 480px) and (max-height: 420px) {
+      @content;
+    }
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (min-width: 769px) and (min-height: 420px) {
+      @content;
+    }
+  } @else if $point==tablet-horizontal {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $point==desktop-wide {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  } @else {
+    @media ($point: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+/** Usage:
+@include breakpoint(tablet) {}
+@include breakpoint(min-width, 1192px) {}
+@include between-breakpoints(0, 1024px) {}
+**/
+
+
 .rbc-calendar {
   box-sizing: border-box;
   height: 100%;
@@ -111,6 +208,100 @@
 .rbc-today {
   background-color: $today-highlight-bg;
 }
+
+.rbc-toolbar .rbc-btn-group .btn {
+  font-size: 16px;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-primary);
+  border-radius: 3px;
+  border: solid 2px var(--color-primary);
+  color: var(--color-gray-0);
+  cursor: pointer;
+  font-family: var(--font-family-opensans);
+  // outline: none;
+  user-select: none;
+  transition: all 200ms var(--ease-out-cubic);
+  display: grid;
+  grid-template-columns: 0.25fr 0.75;
+  grid-auto-flow: column;
+  column-gap: 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  path {
+    fill: var(--color-gray-0);
+  }
+
+  &:hover {
+    background: var(--color-blue-med);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    background: var(--color-gray-1);
+    border-color: var(--color-gray-1);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.large {
+    font-size: 18px;
+    @include breakpoint(tablet) {
+      font-size: 24px;
+      min-height: 54px;
+    }
+    padding: 11px 48px 11px;
+    @media screen and (max-width: 769px) {
+      padding: 10px 30px 10px;
+    }
+  }
+
+  &.small {
+    padding: 4px 6px;
+  }
+  &.medium {
+    font-size: 16px;
+    @include breakpoint(tablet) {
+      font-size: 22px;
+    }
+    padding: 9px 12px;
+  }
+
+  &.secondary {
+    background: none;
+    border: solid 2px var(--color-primary);
+    color: var(--color-primary);
+    transition: all 200ms var(--ease-out-cubic);
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  &.noPadding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .loading {
+    height: 16px;
+    circle {
+      stroke: var(--color-white);
+    }
+  }
+}
+
+
+
+
+
 
 @import './toolbar';
 @import './event';
