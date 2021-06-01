@@ -129,6 +129,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "clsx": "^1.0.4",
     "date-arithmetic": "^4.1.0",
     "dom-helpers": "^5.1.0",

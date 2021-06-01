@@ -14,7 +14,7 @@ class Toolbar extends React.Component {
 
     return (
       <div className="rbc-toolbar">
-        <span className="rbc-btn-group">
+        <div className="rbc-btn-group">
           <button
             className="btn secondary"
             type="button"
@@ -26,7 +26,7 @@ class Toolbar extends React.Component {
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
-            {messages.previous}
+            <i class="fas fa-chevron-left" />
           </button>
           <button
             type="button"
@@ -34,7 +34,7 @@ class Toolbar extends React.Component {
           >
             {messages.next}
           </button>
-        </span>
+        </div>
 
         <span className="rbc-toolbar-label">{label}</span>
 

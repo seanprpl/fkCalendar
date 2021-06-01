@@ -14,7 +14,12 @@ $active-border: darken($btn-border, 12%);
   .rbc-toolbar-label {
     flex-grow:1;
     padding: 0 10px;
-    text-align: center;
+    padding-left: 40px;
+    text-align: left;
+    font-size: 36px;
+    color: #4040d1;
+    line-height: 51px;
+    vertical-align: middle;
   }
 
   & button {
@@ -61,8 +66,11 @@ $active-border: darken($btn-border, 12%);
 }
 
 .rbc-btn-group {
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
   white-space: nowrap;
+  width: 230px;
+  padding-bottom: 8px;
 
   > button:first-child:not(:last-child) {
     border-top-right-radius: 0;

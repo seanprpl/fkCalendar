@@ -212,7 +212,7 @@
 .rbc-toolbar .rbc-btn-group .btn {
   font-size: 16px;
   padding: 5px 15px;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   background: var(--color-primary);
@@ -224,7 +224,6 @@
   // outline: none;
   user-select: none;
   transition: all 200ms var(--ease-out-cubic);
-  display: grid;
   grid-template-columns: 0.25fr 0.75;
   grid-auto-flow: column;
   column-gap: 0.5rem;
