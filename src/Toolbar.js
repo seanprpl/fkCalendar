@@ -7,7 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
-import downChevron from './images/dropdown-chevron.png'
+import downChevron from '../images/dropdown-chevron.png'
 
 import './sass/styles.scss'
 
