@@ -7,7 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
-import downChevron from '../images/dropdown-chevron.png'
+// import downChevron from '../images/dropdown-chevron.png'
 
 import './sass/styles.scss'
 
@@ -52,7 +52,7 @@ class Toolbar extends React.Component {
             <select
               className="outlined-clickable secondary"
               style={{
-                background: `url(${downChevron})  96% / 18% no-repeat`,
+                // background: `url(${downChevron})  96% / 18% no-repeat`,
                 paddingRight: '30px',
                 marginLeft: '2vw',
                 zIndex: 100,
