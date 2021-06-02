@@ -2,10 +2,6 @@
 
 This repo is a fork of React Big calendar.
 
-Most custom styles have been hardcoded
-
-Addition extensions may be required to pass two event types for different coloring of events.
-
 ---
 
 # react-big-calendar
