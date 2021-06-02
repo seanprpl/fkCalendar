@@ -215,21 +215,20 @@
   // display: inline-block;
   justify-content: center;
   align-items: center;
-  background: var(--color-primary);
   border-radius: 3px;
   border: solid 2px var(--color-primary);
   color: var(--color-gray-0);
   cursor: pointer;
-  font-family: var(--font-family-opensans);
-  // outline: none;
-  user-select: none;
-  transition: all 200ms var(--ease-out-cubic);
-  grid-template-columns: 0.25fr 0.75;
-  grid-auto-flow: column;
-  column-gap: 0.5rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  appearance: none; // hides default select arrow
+  // font-family: var(--font-family-opensans);
+  // // outline: none;
+  // user-select: none;
+  // transition: all 200ms var(--ease-out-cubic);
+  // grid-template-columns: 0.25fr 0.75;
+  // grid-auto-flow: column;
+  // column-gap: 0.5rem;
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+  // appearance: none; // hides default select arrow
 
   path {
     fill: var(--color-gray-0);
@@ -281,7 +280,6 @@
 
     &:hover {
       background: var(--color-primary);
-      color: var(--color-white);
     }
   }
 
@@ -305,10 +303,27 @@
   padding-top: 8px;
 }
 
-.purple-outline-button {
+.outlined-clickable {
   font-size: 16px;
-  color: #4040d1;
-  border: 2px solid #4040d1;
+  padding: 5px 15px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  border: solid 2px var(--color-primary);
+  cursor: pointer;
+  appearance: none;
+
+  &.secondary {
+    background: none;
+    border: solid 2px var(--color-primary);
+    color: var(--color-primary);
+    transition: all 200ms var(--ease-out-cubic);
+
+    &:hover {
+      background: var(--color-primary);
+    }
+  }
 }
 
 

@@ -48,12 +48,14 @@ class Toolbar extends React.Component {
 
         <span>
           <span id="timeframe-selector">{this.viewNamesGroup(messages)}</span>
-          <span className="rbc-toolbar rbc-btn-group same-row">
+          <span className="rbc-toolbar rbc-btn-group">
             <select
-              className="btn secondary"
+              className="outlined-clickable secondary"
               style={{
                 background: `url(${downChevron})  96% / 18% no-repeat`,
                 paddingRight: '30px',
+                marginLeft: '2vw',
+                zIndex: 100,
               }}
             >
               <option>Sanford</option>
