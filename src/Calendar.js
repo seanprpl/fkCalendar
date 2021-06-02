@@ -993,6 +993,15 @@ class Calendar extends React.Component {
           onShowMore={onShowMore}
           doShowMoreDrillDown={doShowMoreDrillDown}
         />
+
+        <div>
+          <div className="legend">
+            <div id="medium-purple-sample" />
+            <div id="medium-purple-event">EVENT</div>
+            <div id="dark-purple-sample" />
+            <div id="dark-purple-class">CLASS</div>
+          </div>
+        </div>
       </div>
     )
   }
