@@ -7,6 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
+import downChevron from './images/dropdown-chevron.png'
 
 import './sass/styles.scss'
 
@@ -45,7 +46,22 @@ class Toolbar extends React.Component {
 
         <span className="rbc-toolbar-label">{label}</span>
 
-        <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
+        <span>
+          <span id="timeframe-selector">{this.viewNamesGroup(messages)}</span>
+          <span className="rbc-toolbar rbc-btn-group same-row">
+            <select
+              className="btn secondary"
+              style={{
+                background: `url(${downChevron})  96% / 18% no-repeat`,
+                paddingRight: '30px',
+              }}
+            >
+              <option>Sanford</option>
+              <option>Atlanta</option>
+              <option>Orlando</option>
+            </select>
+          </span>
+        </span>
       </div>
     )
   }

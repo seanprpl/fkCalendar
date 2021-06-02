@@ -25,6 +25,23 @@
   flex: none;
 }
 
+#timeframe-selector button {
+  color: gray;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+  &.rbc-active {
+    font-weight: 700 !important;
+    background-color: white;
+    box-shadow: none;
+    color: #4040d1 !important;
+    border-bottom: 2px solid #4040d1;
+  }
+}
+
 .rbc-label {
   padding: 0 5px;
   font-family: 'Open Sans', sans-serif;
