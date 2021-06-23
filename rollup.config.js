@@ -4,7 +4,10 @@ import commonjs from 'rollup-plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
 import { terser } from 'rollup-plugin-terser'
+import image from '@rollup/plugin-image'
+import sass from 'rollup-plugin-sass'
 import pkg from './package.json'
+import nodeSass from 'node-sass'
 
 const input = './src/index.js'
 const name = 'ReactBigCalendar'
@@ -34,9 +37,11 @@ export default [
     external: Object.keys(globals),
     plugins: [
       nodeResolve(),
+      sass(),
       babel(babelOptions),
       commonjs(commonjsOptions),
       replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
+      image(),
       sizeSnapshot(),
     ],
   },
@@ -52,9 +57,11 @@ export default [
     external: Object.keys(globals),
     plugins: [
       nodeResolve(),
+      sass(),
       babel(babelOptions),
       commonjs(commonjsOptions),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+      image(),
       sizeSnapshot(),
       terser(),
     ],
@@ -65,6 +72,6 @@ export default [
     output: { file: pkg.module, format: 'esm' },
     // prevent bundling all dependencies
     external: id => !id.startsWith('.') && !id.startsWith('/'),
-    plugins: [babel(babelOptions), sizeSnapshot()],
+    plugins: [babel(babelOptions)],
   },
 ]
