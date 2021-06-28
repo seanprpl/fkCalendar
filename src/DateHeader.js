@@ -3,7 +3,7 @@ import React from 'react'
 
 const DateHeader = ({ label, drilldownView, onDrillDown }) => {
   if (!drilldownView) {
-    return <span>{label}</span>
+    return <span className="date-header">{label}</span>
   }
 
   return (

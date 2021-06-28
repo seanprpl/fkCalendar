@@ -7,7 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
-// import downChevron from '../images/dropdown-chevron.png'
+import downChevron from '../images/dropdown-chevron.png'
 
 import './sass/styles.scss'
 
@@ -29,14 +29,14 @@ class Toolbar extends React.Component {
             {messages.today}
           </button>
           <button
-            className="rounded"
+            className="rounded nav-prev"
             type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <button
-            className="rounded"
+            className="rounded  nav-next"
             type="button"
             onClick={this.navigate.bind(null, navigate.NEXT)}
           >
@@ -48,21 +48,19 @@ class Toolbar extends React.Component {
 
         <span>
           <span id="timeframe-selector">{this.viewNamesGroup(messages)}</span>
-          <span className="rbc-toolbar rbc-btn-group">
-            <select
-              className="outlined-clickable secondary"
-              style={{
-                // background: `url(${downChevron})  96% / 18% no-repeat`,
-                paddingRight: '30px',
-                marginLeft: '2vw',
-                zIndex: 100,
-              }}
-            >
+           <select
+             className="outlined-clickable secondary"
+             style={{
+               background: `url(${downChevron})  96% / 18% no-repeat`,
+               paddingRight: '30px',
+               marginLeft: '2vw',
+               zIndex: 100,
+             }}
+           >
               <option>Sanford</option>
               <option>Atlanta</option>
               <option>Orlando</option>
             </select>
-          </span>
         </span>
       </div>
     )
